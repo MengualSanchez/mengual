@@ -1,0 +1,343 @@
+object Vprincipal: TVprincipal
+  Left = 354
+  Top = 168
+  Width = 435
+  Height = 539
+  AlphaBlend = True
+  Caption = 'Hola,Que pasa?!!!!!'
+  Color = clHighlight
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 56
+    Top = 136
+    Width = 67
+    Height = 29
+    Caption = 'P 1_0'
+    Color = clHighlight
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 56
+    Top = 200
+    Width = 67
+    Height = 29
+    Caption = 'P 1_1'
+    Color = clHighlight
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 56
+    Top = 264
+    Width = 67
+    Height = 29
+    Caption = 'P 1_2'
+    Color = clHighlight
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 56
+    Top = 328
+    Width = 67
+    Height = 29
+    Caption = 'P 1_3'
+    Color = clHighlight
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Panel2: TPanel
+    Left = 136
+    Top = 120
+    Width = 60
+    Height = 60
+    Caption = '1'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Panel4: TPanel
+    Left = 136
+    Top = 248
+    Width = 60
+    Height = 60
+    Caption = '1'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Panel3: TPanel
+    Left = 136
+    Top = 184
+    Width = 60
+    Height = 60
+    Caption = '1'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+  end
+  object Panel5: TPanel
+    Left = 136
+    Top = 312
+    Width = 60
+    Height = 60
+    Caption = '1'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+  end
+  object CheckBoxP0_0: TDBCheckBox
+    Left = 232
+    Top = 120
+    Width = 100
+    Height = 30
+    Caption = 'P 0_0'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 4
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+    OnClick = BCheekBoxP0_0Click
+  end
+  object CheckBoxP0_1: TDBCheckBox
+    Left = 232
+    Top = 152
+    Width = 100
+    Height = 30
+    Caption = 'P 0_1'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 5
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+    OnClick = BCheekBoxP0_1Click
+  end
+  object CheckBoxP0_2: TDBCheckBox
+    Left = 232
+    Top = 184
+    Width = 100
+    Height = 30
+    Caption = 'P 0_2'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 6
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+    OnClick = BCheekBoxP0_2Click
+  end
+  object CheckBoxP0_3: TDBCheckBox
+    Left = 232
+    Top = 216
+    Width = 100
+    Height = 30
+    AllowGrayed = True
+    Caption = 'P 0_3'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 7
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+    OnClick = BCheekBoxP0_3Click
+  end
+  object Panel1: TPanel
+    Left = 88
+    Top = 56
+    Width = 265
+    Height = 57
+    Caption = 'Timer ON'
+    Color = clGreen
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 8
+    OnClick = Panel1Click
+  end
+  object BIniciar: TButton
+    Left = 56
+    Top = 384
+    Width = 153
+    Height = 73
+    Caption = 'Iniciar Tarjeta'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 9
+    OnClick = BIniciarClick
+  end
+  object BEstado: TButton
+    Left = 216
+    Top = 384
+    Width = 153
+    Height = 73
+    Caption = 'Leer Estado'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 10
+    OnClick = BLeerEstadoClick
+  end
+  object CheckBoxP0_4: TDBCheckBox
+    Left = 232
+    Top = 248
+    Width = 100
+    Height = 30
+    Caption = 'P 0_4'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 11
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+    OnClick = BCheekBoxP0_4Click
+  end
+  object CheckBoxP0_5: TDBCheckBox
+    Left = 232
+    Top = 280
+    Width = 100
+    Height = 30
+    Caption = 'P 0_5'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 12
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+    OnClick = BCheekBoxP0_5Click
+  end
+  object CheckBoxP0_6: TDBCheckBox
+    Left = 232
+    Top = 312
+    Width = 100
+    Height = 30
+    Caption = 'P 0_6'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 13
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+    OnClick = BCheekBoxP0_6Click
+  end
+  object CheckBoxP0_7: TDBCheckBox
+    Left = 232
+    Top = 344
+    Width = 100
+    Height = 30
+    Caption = 'P 0_7'
+    Color = clRed
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -24
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 14
+    ValueChecked = 'True'
+    ValueUnchecked = 'False'
+    OnClick = BCheekBoxP0_7Click
+  end
+  object Timer1: TTimer
+    Interval = 500
+    OnTimer = BLeerTimerClick
+    Left = 32
+    Top = 24
+  end
+end

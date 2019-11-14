@@ -1,0 +1,83 @@
+//- process.cpp -------------------------------------------------------------
+#pragma hdrstop
+#include "process.h"
+#include <vcl.h>
+#include "ss_nidaqmx.h"
+#pragma package(smart_init)
+#define OVERFLOW_SENSOR_BIT 0
+// bit 0 is the overflowsensor
+int portstate;
+TaskHandle read_port1_task;          // Nombre de la tarea
+TaskHandle write_port0_task;
+TaskHandle read_ai0_task;
+// process error reporting --------------------------------------------------
+void process_error(int32 code, char *suffix) {
+    AnsiString msg;
+    char buff[200]; // buffer for the error message
+    msg = "Error: ";
+    msg = msg + suffix;
+    msg = msg + "\n";
+    msg = msg + "In: ";
+    DAQmxGetErrorString (code, buff, 200);  // get the error message
+    msg = msg + buff;
+    ShowMessage(msg);   exit(1);     // force the end of the application
+}
+// process initialization ---------------------------------------------------
+void process_init(char *deviceName) {
+    int32 daq_error;
+    portstate = 0x00;
+
+// first, create an empty task
+daq_error = DAQmxCreateTask("Read task",&read_port1_task);
+    if (daq_error != 0)process_error(daq_error,"process_init()->1");
+
+daq_error = DAQmxCreateTask("Write task",&write_port0_task);
+    if (daq_error != 0)process_error(daq_error,"process_init()->1");
+
+daq_error = DAQmxCreateTask("Analog task", &read_ai0_task);
+    if (daq_error != 0)process_error(daq_error,"process_init()->1");
+
+// now, add channels to the task. In this example, a complete port
+daq_error = DAQmxCreateDIChan(read_port1_task, "Dev3/port1",
+            "",DAQmx_Val_ChanForAllLines);
+    if (daq_error != 0)process_error(daq_error,"process_init()->2");
+
+daq_error = DAQmxCreateDOChan(write_port0_task, "Dev3/port0",
+            "",DAQmx_Val_ChanForAllLines);
+    if (daq_error != 0)process_error(daq_error,"process_init()->2");
+
+daq_error = DAQmxCreateAIVoltageChan(read_ai0_task, "Dev3/ai0",
+            "", DAQmx_Val_RSE, 0.0, 10.0, DAQmx_Val_Volts, NULL);
+    if (daq_error != 0)process_error(daq_error,"process_init()->2");
+}
+// read port 1 pins and return state ------------------------------------
+int process_read_port1(void) {
+    int32 daq_error;
+    uInt32 data;
+
+daq_error = DAQmxReadDigitalScalarU32 (read_port1_task, 0.0, &data,NULL);
+
+    if (daq_error != 0) process_error(daq_error,"process_read_port1()");
+
+    return(data);
+}
+// write port 0 pins  ----------------------------------------------------
+void process_write_port0(int bitMask, int statepin) {
+    int32 daq_error;
+    if (statepin == PIN_OFF){
+        portstate &=~ bitMask; //Pin set 0
+    }else{
+        portstate |=  bitMask; //Pin set 1
+    }
+
+daq_error = DAQmxWriteDigitalScalarU32(write_port0_task, true, 0.0, portstate, NULL);
+
+    if (daq_error != 0) process_error(daq_error,"process_write_port0()");
+}
+
+
+
+
+
+
+
